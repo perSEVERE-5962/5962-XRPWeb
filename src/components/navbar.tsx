@@ -6,7 +6,7 @@
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // See the GNU General Public License for more details
-import logo from '@assets/images/xrpstickerbot.png';
+import logo from '@assets/images/team_logo.svg';
 import fileadd from '@assets/images/file_add.svg';
 import fileupload from '@assets/images/upload_file.svg';
 import fileexport from '@assets/images/fileexport.svg';
@@ -1512,6 +1512,9 @@ function NavBar({ layoutref }: NavBarProps) {
         toggleDialog();
     }
 
+    // GiS Docs menu
+    const gisDocs = 'https://github.com/eeveemara/xrp-web/blob/main/docs/';
+
     const navItems: MenuDataItem[] = [
         {
             label: t('file'),
@@ -1626,6 +1629,41 @@ function NavBar({ layoutref }: NavBarProps) {
                 },
             ],
         },
+        {
+            label: 'GiS Docs',
+            children: [
+                {
+                    label: 'How to coach a kid',
+                    iconImage: curriculum,
+                    link: gisDocs + 'KIDS_ROBOTICS_STUDENT_GUIDE.md',
+                },
+                {
+                    label: 'The 5 challenges',
+                    iconImage: curriculum,
+                    link: gisDocs + 'KIDS_ROBOTICS_CHALLENGES.md',
+                },
+                {
+                    label: 'How kids mode works',
+                    iconImage: curriculum,
+                    link: gisDocs + 'KIDS_ROBOTICS_EVENT.md',
+                },
+                {
+                    label: 'Robot Challenge handout (PDF)',
+                    iconImage: userguide,
+                    link: gisDocs + 'Robot_Challenge.pdf',
+                },
+                {
+                    label: 'Station guide',
+                    iconImage: userguide,
+                    link: gisDocs + 'GIS_STATION_GUIDE.md',
+                },
+                {
+                    label: 'XRP firmware',
+                    iconImage: firmwareLoaderIcon,
+                    link: gisDocs + 'XRP_FIRMWARE.md',
+                },
+            ],
+        },
     ];
 
     const moreMenu: MenuDataItem[] = [
@@ -1669,7 +1707,9 @@ function NavBar({ layoutref }: NavBarProps) {
         <div className="flex items-center justify-between p-1 px-5 text-shark-100 shadow-md">
             <div className="flex flex-row gap-4 transition-all">
                 {/** Logo */}
-                <img src={logo} alt="logo" width="100" height="50" />
+                <a href="https://frcpersevere.com/" target="_blank" rel="noreferrer" title="Team 5962 perSEVERE">
+                    <img src={logo} alt="Team 5962 perSEVERE" className="h-[50px] w-auto" />
+                </a>
                 {navItems.map((item, index) => (
                     <div key={index} className="group relative transition-all">
                         <p className="ml-2 mt-4 flex cursor-pointer text-matisse-100 group-hover:bg-curious-blue-700 dark:group-hover:bg-mountain-mist-950">
